@@ -3,15 +3,16 @@ datos = (("BAQ","Barranquilla"),("BGA","Bucaramanga"),("BOG","Bogota"),("CLO","C
 salir = False
 
 while not salir:
+    city = ''
 
     codigo = input("Ingresa por favor el Código: ").upper()
-
-    for i in range(len(datos)):
-        if codigo == datos[i][0]:
-            print(f"Ciudad: {datos[i][1]}")
-            
+    for cod,nom in datos:
+        if cod == codigo:
+            city = f"Ciudad: {nom}"
+    if len(city) ==0:
+        print("Código no encontrado")
     else:
-        print("No encontrado: ")
+        print(city)
 
     respuesta = input("¿Quierés salir?: ").lower()
     if respuesta == "si":
